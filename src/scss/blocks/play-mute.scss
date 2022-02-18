@@ -1,0 +1,21 @@
+.play-mute {
+  // display: none;
+}
+@media (min-aspect-ratio: 16 / 9) and (min-width: 600px) {
+  .play-mute {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    z-index: 10;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    background-image: url("../images/volume_off.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+    &--on {
+      background-image: url("../images/volume_on.svg");
+    }
+  }
+}
