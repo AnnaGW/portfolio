@@ -1,0 +1,31 @@
+// стили для видео фона с переключателем фонов
+.video-bg__container {  
+  position: relative;
+  height: 100vh;
+  overflow: hidden; 
+  background-image: url("../images/bg_mobile_v2.svg");
+  background-repeat: repeat;
+  background-size: 70%;
+  // background-color: #95a3a3; - фон в svg
+  // background-color: #e9ddc5; - завитки
+}
+.video-bg {
+  display: none;
+}
+.video-bg__author {
+  display: none;
+}
+@media (min-aspect-ratio: 16 / 9) and (min-width: 600px) {
+  .video-bg {
+    display: block;
+    width: 100%;
+  }
+  .video-bg__author {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    margin: 0;
+    font-size: 10px;
+    color: #ffffff;
+  }
+}
