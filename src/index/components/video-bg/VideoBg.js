@@ -8,7 +8,7 @@ global.$ = $;
 
 import {
   PlayMute
-} from '@/components/icons/PlayMute';
+} from '@/index/components/icons/PlayMute';
 
 export class VideoBg {
   constructor(rootClassName, bgNames = []) {

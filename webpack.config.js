@@ -19,17 +19,28 @@ module.exports = (env, argv) => {
   const plugins = () => {
     const base =[
       new HtmlWebpackPlugin({
-        template: './index.html'
+        filename: 'index.html',
+        template: './index/index.html',
+        chunks: ['main']
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'mandala.html',
+        template: './mandala/mandala.html',
+        chunks: ['mandala']
       }),
       new CopyPlugin({
         patterns: [
           { 
-            from: path.resolve(__dirname, 'src/images'), 
-            to: path.resolve(__dirname, 'dist/images') 
+            from: path.resolve(__dirname, 'src/index/images'), 
+            to: path.resolve(__dirname, 'dist/index/images') 
           },
           { 
-            from: path.resolve(__dirname, 'src', 'favicon.ico'), 
-            to: path.resolve(__dirname, 'dist') 
+            from: path.resolve(__dirname, 'src/mandala/images'), 
+            to: path.resolve(__dirname, 'dist/mandala/images') 
+          },
+          { 
+            from: path.resolve(__dirname, 'src/index', 'favicon.ico'), 
+            to: path.resolve(__dirname, 'dist/index') 
           }
         ],
       }),
@@ -54,7 +65,12 @@ module.exports = (env, argv) => {
       main: [
         'core-js/stable',
         'regenerator-runtime/runtime',
-        './index.js'
+        './index/index.js'
+      ],
+      mandala: [
+        'core-js/stable',
+        'regenerator-runtime/runtime',
+        './mandala/mandala.js'
       ]
     },
     output: {

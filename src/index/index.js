@@ -1,6 +1,6 @@
 import {
   VideoBg
-} from '@/components/video-bg/VideoBg';
+} from '@/index/components/video-bg/VideoBg';
 
 import './scss/index.scss'
 import $ from 'jquery'
@@ -11,6 +11,6 @@ console.log('WELLCOME');
 
 const videoBackground = new VideoBg(
   'first',
-  ['images/winter_forest_30s.mp4', 'images/summer-forest_26s.mp4']
+  ['index/images/winter_forest_30s.mp4', 'images/summer-forest_26s.mp4']
 )
 videoBackground.render()
